@@ -30,7 +30,7 @@ zonemap = {
     'a1': {
         ZONENAME: 'Latter up',
         DESCRIPTION: 'There is a latter going up.',
-        SEARCH: 'The start is to the right.',
+        SEARCH: '',
         UP: 'b2',
         DOWN: '',
         LEFT: '',
@@ -68,7 +68,7 @@ zonemap = {
     },
     'b1': {
         ZONENAME: 'Crew Quarters',
-        DESCRIPTION: """there is a table and beds. There are two pirates""",
+        DESCRIPTION: """there is a table and beds.""",
         SEARCH: 'the only way is right to the latter going down',
         UP: '',
         DOWN: '',

@@ -6,14 +6,6 @@
 # Description: CS30 Final RPG game. All input must be
 # lowercase
 
-# Course: CS 30
-# Period: 1
-# Date created: 21/02/28
-# Date last modified: 21/03/01
-# Name: Kira Gray
-# Description: RPG game with classes, no addition files yet
-# Ill be doing that for the final game though
-
 import title as ti
 from classes import myPlayer
 from classes import player
@@ -84,15 +76,27 @@ def move(ans):
 
 
 def player_examine(ans):
-    if zonemap[myPlayer.location] == 'a1' or 'b4':
-        ask = "Would you like to go up?\n> "
+    if myPlayer.location == 'a1':
+        ask = "Would you like to go up?\n"
         dest = input(ask)
         if dest == 'yes':
             destination = zonemap[myPlayer.location][UP]
             move_player(destination)
         else:
             continuous(ans)
-    elif zonemap[myPlayer.location] == 'b2' or 'c2':
+    elif myPlayer.location == 'b4':
+        ask = "Would you like to go down?\n> "
+        dest = input(ask)
+        if dest == 'yes':
+            destination = zonemap[myPlayer.location][DOWN]
+            move_player(destination)
+    elif myPlayer.location == 'b2':
+        ask = "Would you like to go down?\n> "
+        dest = input(ask)
+        if dest == 'yes':
+            destination = zonemap[myPlayer.location][DOWN]
+            move_player(destination)
+    elif myPlayer.location == 'c2':
         ask = "Would you like to go down?\n> "
         dest = input(ask)
         if dest == 'yes':
@@ -101,7 +105,10 @@ def player_examine(ans):
         else:
             continuous(ans)
     else:
-        zonemap[myPlayer.location][SEARCH]
+        print(zonemap[myPlayer.location][SEARCH] + '\n')
+
+def player_attack(ans):
+  if myPlayer_location == ''
 
 
 def main_game_loop():
