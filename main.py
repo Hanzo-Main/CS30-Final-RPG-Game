@@ -17,8 +17,8 @@
 import title as ti
 from classes import myPlayer
 from classes import player
-from map import zonemap
-import map
+from game_map import zonemap
+from game_map import print_map
 global dest
 global ask
 
@@ -33,24 +33,8 @@ RIGHT = 'right', 'east',
 
 
 def print_location():
-    print('\n' + ('#' * (4 + len(myPlayer.location))))
-    print('# ' + myPlayer.location + ' #')
-    print('# ' + zonemap[myPlayer.location][DESCRIPTION] + ' #')
-    print('\n' + ('#' * (4 + len(myPlayer.location))))
-
-
-def move(myAction):
-    ask = "Where would you like to "+myAction+" to?\n> "
-    dest = input(ask)
-    if dest == 'left':
-        destination = zonemap[myPlayer.location][LEFT]
-        move_player(destination)
-    elif destination == 'right':
-        destination = zonemap[myPlayer.location][RIGHT]
-        move_player(destination)
-    else:
-        print("Invalid direction, try using left, or right.\n")
-        move(myAction)
+    print('\n ' + myPlayer.location)
+    print(zonemap[myPlayer.location][DESCRIPTION] + ' \n')
 
 
 def move_player(destination):
@@ -59,13 +43,12 @@ def move_player(destination):
     print_location()
 
 
-
 def continuous(ans):
     while ans:
         print("""
           Do one of the following actions:
           -> Move
-          -> Explore
+          -> Examine
           -> Attack
           -> Quit
           """)
@@ -73,22 +56,34 @@ def continuous(ans):
         ans = input("> ")
         if ans.lower() == "quit":
             break
-        elif ans.lower() == "left":
-            player.move(ans.lower())
-            print("You go left.")
-        elif ans.lower() == "right".lower():
-            player.move(ans.lower())
-            print("You go right.")
-        elif ans.lower() == "Explore".lower():
-            player.explore(ans.lower())
-            print("You look around.")
+        elif ans.lower() == "move":
+            move(ans)
+        elif ans.lower() == "examine".lower():
+            player_examine(ans)
         elif ans.lower() == "attack".lower():
             player.attack(ans.lower())
             print("You attack.")
         else:
             print("Invalid imput!")
 
-def play_examine(ans):
+
+def move(ans):
+    ask = "\nWhere would you like to go? \n> "
+    dest = input(ask)
+    if dest == 'left':
+        destination = zonemap[myPlayer.location][LEFT]
+        move_player(destination)
+    elif dest == 'right':
+        destination = zonemap[myPlayer.location][RIGHT]
+        move_player(destination)
+    else:
+        print("Invalid direction, try using left, or right.\n")
+        move(ans)
+
+
+
+
+def player_examine(ans):
     if zonemap[myPlayer.location] == 'a1' or 'b4':
         ask = "Would you like to go up?\n> "
         dest = input(ask)
@@ -118,6 +113,7 @@ def setup_game():
     print('\nWelcome to The Hijack!\n')
     print('You have been hired to take back a cargo ship.')
     print('Only two pirates are involved. Good Luck!')
+    print_map()
     main_game_loop()
 
 ti.intro_text()

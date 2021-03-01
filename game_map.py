@@ -1,14 +1,15 @@
 def print_map():
-    print("""╔════════════╦════════════╦═════════════╦════════════╗
-             ║   Latter   ║ Cargo Left ║ Cargo Right ║ Hyperdrive ║
-             ║ (2nd  lvl) ║  (*start)  ║  (and map)  ║    Room    ║
-             ╠════════════╬════════════╬═════════════╬════════════╣
-             ║    Crew    ║   Latter   ║ Living Area ║   Latter   ║
-             ║  Quarters  ║ (to start) ║             ║ (3rd  lvl) ║
-             ╠════════════╬════════════╬═════════════╬════════════╣
-             ║  Captains  ║   Latter   ║ Locked Room ║  Cockpit   ║
-             ║  Quarters  ║ (2nd  lvl) ║             ║            ║
-             ╚════════════╩════════════╩═════════════╩════════════╝
+    print("""
+             ╔══════════╦══════════╦═══════════╦═══════════╗
+             ║  Latter  ║Cargo Left║Cargo Right║Hyperdrive ║
+             ║(2nd  lvl)║ (*start) ║           ║   Room    ║
+             ╠══════════╬══════════╬═══════════╬═══════════╣
+             ║   Crew   ║  Latter  ║Living Area║  Latter   ║
+             ║ Quarters ║(to start)║           ║(3rd  lvl) ║
+             ╠══════════╬══════════╬═══════════╬═══════════╣
+             ║ Captains ║  Latter  ║Locked Room║  Cockpit  ║
+             ║ Quarters ║(2nd  lvl)║           ║   (end)   ║
+             ╚══════════╩══════════╩═══════════╩═══════════╝
           """)
 
 ZONENAME = ''
