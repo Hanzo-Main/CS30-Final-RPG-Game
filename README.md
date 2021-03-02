@@ -1,6 +1,8 @@
 # The Hijack
 
-The Hijack is a text based RPG game made by a tierd grade 12. If that isn't appeling I dont know what is. Any age who can work a computer can use.
+The Hijack is a text based RPG game made by a tierd grade 12.
+If that isn't appeling I dont know what is. Any age who can work a computer can use.
+For best gameplay experiance, examine each room before moving.
 
 ## Instalation
 
