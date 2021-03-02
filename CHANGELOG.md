@@ -54,3 +54,7 @@ v1.8
 - got ride of more useless code
 - corrected code in map file
 - newline at the end of classes file
+
+v1.9
+
+-fixed game breaking bug i made by getting rid of code
