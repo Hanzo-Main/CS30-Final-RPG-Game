@@ -3,8 +3,7 @@
 # Date created: 21/03/01
 # Date last modified: 21/03/01
 # Name: Kira Gray
-# Description: CS30 Final RPG game. All input must be
-# lowercase
+# Description: CS30 Final RPG game.
 
 import title as ti
 from classes import myPlayer
