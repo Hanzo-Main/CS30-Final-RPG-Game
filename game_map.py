@@ -1,17 +1,18 @@
 def print_map():
+    """prints the game map"""
     print(
-    """
-    ╔══════════╦══════════╦═══════════╦═══════════╗
-    ║  Latter  ║Cargo Left║Cargo Right║Hyperdrive ║
-    ║(2nd  lvl)║ (*start) ║           ║   Room    ║
-    ╠══════════╬══════════╬═══════════╬═══════════╣
-    ║   Crew   ║  Latter  ║Living Area║  Latter   ║
-    ║ Quarters ║(to start)║           ║(3rd  lvl) ║
-    ╠══════════╬══════════╬═══════════╬═══════════╣
-    ║ Captains ║  Latter  ║Locked Room║  Cockpit  ║
-    ║ Quarters ║(2nd  lvl)║           ║   (end)   ║
-    ╚══════════╩══════════╩═══════════╩═══════════╝
-    """)
+        """
+        ╔══════════╦══════════╦═══════════╦═══════════╗
+        ║  Latter  ║Cargo Left║Cargo Right║Hyperdrive ║
+        ║(2nd  lvl)║ (*start) ║           ║   Room    ║
+        ╠══════════╬══════════╬═══════════╬═══════════╣
+        ║   Crew   ║  Latter  ║Living Area║  Latter   ║
+        ║ Quarters ║(to start)║           ║(3rd  lvl) ║
+        ╠══════════╬══════════╬═══════════╬═══════════╣
+        ║ Captains ║  Latter  ║Locked Room║  Cockpit  ║
+        ║ Quarters ║(2nd  lvl)║           ║   (end)   ║
+        ╚══════════╩══════════╩═══════════╩═══════════╝
+        """)
 
 ZONENAME = ''
 DESCRIPTION = 'description'
@@ -22,6 +23,7 @@ DOWN = 'down', 'south',
 LEFT = 'left', 'west',
 RIGHT = 'right', 'east',
 
+# map dictionnary
 zonemap = {
     'a1': {
         ZONENAME: 'Latter up',
@@ -74,7 +76,8 @@ zonemap = {
     'b2': {
         ZONENAME: 'Latter down',
         DESCRIPTION: 'Latter that goes down',
-        SEARCH: """Crew Quarters are to the left and the living area to the right""",
+        SEARCH: """Crew Quarters are to the left and
+        the living area to the right""",
         UP: '',
         DOWN: 'a1',
         LEFT: 'b1',
@@ -121,9 +124,10 @@ zonemap = {
     'c3': {
         ZONENAME: 'Locked room',
         DESCRIPTION: """
-        You use the key card! There is nothing in the room, it's just a room leading to the cockpit.
-        """,
-        SEARCH: """The latter going down is on the left and the cockpit is to the right.""",
+        You use the key card! There is nothing in the room,
+        it's just a room leading to the cockpit.""",
+        SEARCH: """The latter going down is on the left and
+        the cockpit is to the right.""",
         UP: '',
         DOWN: '',
         LEFT: 'c2',

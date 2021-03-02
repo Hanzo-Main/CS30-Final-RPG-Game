@@ -12,6 +12,7 @@ from game_map import print_map
 global dest
 global ask
 
+# code for map
 ZONENAME = ''
 DESCRIPTION = 'description'
 SEARCH = 'search'
@@ -23,17 +24,20 @@ RIGHT = 'right', 'east',
 
 
 def print_location():
+    """prints and moves where the player is on the map"""
     print('\n ' + myPlayer.location)
     print(zonemap[myPlayer.location][DESCRIPTION] + ' \n')
 
 
 def move_player(destination):
+    """prints where you have moved on the map"""
     print("\nYou have moved to the " + destination + ".")
     myPlayer.location = destination
     print_location()
 
 
 def continuous(ans):
+    """function that adds continuous gamplay"""
     while ans:
         print("""
           Do one of the following actions:
@@ -60,6 +64,8 @@ def continuous(ans):
 
 
 def move(ans):
+    """asks player where they want to move
+    and helps move them there"""
     ask = "\nWhere would you like to go? \n> "
     dest = input(ask)
     if dest == 'left':
@@ -74,6 +80,8 @@ def move(ans):
 
 
 def player_examine(ans):
+    """lets the player examine thier surroundings and
+    travel up and down ladders"""
     if myPlayer.location == 'a1':
         ask = "\nWould you like to go up?\n"
         dest = input(ask)
@@ -107,6 +115,7 @@ def player_examine(ans):
 
 
 def player_attack(ans):
+    """very basic attack function for the two enemys"""
     if myPlayer.location == 'b3':
         print("You shoot the pirate before he saw you!")
         continuous(ans)
@@ -117,11 +126,13 @@ def player_attack(ans):
 
 
 def main_game_loop():
+    """Makes the game loop until it is beaten"""
     while myPlayer.won is False:
         continuous(ans=True)
 
 
 def setup_game():
+    """prints starting text and map, also starts the game"""
     print('\nWelcome to The Hijack!\n')
     print('You have been hired to take back a cargo ship.')
     print('Only two pirates are involved. Good Luck!')
