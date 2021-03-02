@@ -127,8 +127,7 @@ def player_attack(ans):
 
 def main_game_loop():
     """Makes the game loop until it is beaten"""
-    while myPlayer.won is False:
-        continuous(ans=True)
+    continuous(ans=True)
 
 
 def setup_game():
