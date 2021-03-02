@@ -8,9 +8,9 @@
 
 import title as ti
 from classes import myPlayer
-from classes import player
 from game_map import zonemap
 from game_map import print_map
+global status
 global dest
 global ask
 
@@ -42,19 +42,21 @@ def continuous(ans):
           -> Move
           -> Examine
           -> Attack
+          -> Show Map
           -> Quit
           """)
         print("What would you like to do?")
         ans = input("> ")
         if ans.lower() == "quit":
-            break
+            quit()
         elif ans.lower() == "move":
             move(ans)
         elif ans.lower() == "examine".lower():
             player_examine(ans)
         elif ans.lower() == "attack".lower():
-            player.attack(ans.lower())
-            print("You attack.")
+            player_attack(ans)
+        elif ans.lower() == "show map".lower():
+            print_map()
         else:
             print("Invalid imput!")
 
@@ -77,7 +79,7 @@ def move(ans):
 
 def player_examine(ans):
     if myPlayer.location == 'a1':
-        ask = "Would you like to go up?\n"
+        ask = "\nWould you like to go up?\n"
         dest = input(ask)
         if dest == 'yes':
             destination = zonemap[myPlayer.location][UP]
@@ -85,19 +87,19 @@ def player_examine(ans):
         else:
             continuous(ans)
     elif myPlayer.location == 'b4':
-        ask = "Would you like to go down?\n> "
+        ask = "\nWould you like to go up?\n> "
         dest = input(ask)
         if dest == 'yes':
-            destination = zonemap[myPlayer.location][DOWN]
+            destination = zonemap[myPlayer.location][UP]
             move_player(destination)
     elif myPlayer.location == 'b2':
-        ask = "Would you like to go down?\n> "
+        ask = "\nWould you like to go down?\n> "
         dest = input(ask)
         if dest == 'yes':
             destination = zonemap[myPlayer.location][DOWN]
             move_player(destination)
     elif myPlayer.location == 'c2':
-        ask = "Would you like to go down?\n> "
+        ask = "\nWould you like to go down?\n> "
         dest = input(ask)
         if dest == 'yes':
             destination = zonemap[myPlayer.location][DOWN]
@@ -108,7 +110,14 @@ def player_examine(ans):
         print(zonemap[myPlayer.location][SEARCH] + '\n')
 
 def player_attack(ans):
-  if myPlayer_location == ''
+  if myPlayer.location == 'b3':
+    print("You shoot the pirate before he saw you!")
+
+    continuous(ans)
+  elif myPlayer.location == 'c4':
+    print("You shot first!")
+    print('\n You beat the game!')
+    quit()
 
 
 def main_game_loop():

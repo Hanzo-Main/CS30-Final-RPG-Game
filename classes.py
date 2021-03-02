@@ -9,6 +9,7 @@ myPlayer = player()
 class Enemy:
     def __init__(status):
         status.live = 'alive'
+        all_dead = False
 
 
 class Captain(Enemy):

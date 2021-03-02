@@ -1,16 +1,17 @@
 def print_map():
-    print("""
-             ╔══════════╦══════════╦═══════════╦═══════════╗
-             ║  Latter  ║Cargo Left║Cargo Right║Hyperdrive ║
-             ║(2nd  lvl)║ (*start) ║           ║   Room    ║
-             ╠══════════╬══════════╬═══════════╬═══════════╣
-             ║   Crew   ║  Latter  ║Living Area║  Latter   ║
-             ║ Quarters ║(to start)║           ║(3rd  lvl) ║
-             ╠══════════╬══════════╬═══════════╬═══════════╣
-             ║ Captains ║  Latter  ║Locked Room║  Cockpit  ║
-             ║ Quarters ║(2nd  lvl)║           ║   (end)   ║
-             ╚══════════╩══════════╩═══════════╩═══════════╝
-          """)
+    print(
+    """
+    ╔══════════╦══════════╦═══════════╦═══════════╗
+    ║  Latter  ║Cargo Left║Cargo Right║Hyperdrive ║
+    ║(2nd  lvl)║ (*start) ║           ║   Room    ║
+    ╠══════════╬══════════╬═══════════╬═══════════╣
+    ║   Crew   ║  Latter  ║Living Area║  Latter   ║
+    ║ Quarters ║(to start)║           ║(3rd  lvl) ║
+    ╠══════════╬══════════╬═══════════╬═══════════╣
+    ║ Captains ║  Latter  ║Locked Room║  Cockpit  ║
+    ║ Quarters ║(2nd  lvl)║           ║   (end)   ║
+    ╚══════════╩══════════╩═══════════╩═══════════╝
+    """)
 
 ZONENAME = ''
 DESCRIPTION = 'description'
@@ -20,11 +21,6 @@ UP = 'up', 'north',
 DOWN = 'down', 'south',
 LEFT = 'left', 'west',
 RIGHT = 'right', 'east',
-
-solved_places = {'a1': False, 'a2': False, 'a3': False, 'a4': False,
-                 'b1': False, 'b2': False, 'b3': False, 'b4': False,
-                 'c1': False, 'c2': False, 'c3': False, 'c4': False,
-                 }
 
 zonemap = {
     'a1': {
@@ -78,8 +74,7 @@ zonemap = {
     'b2': {
         ZONENAME: 'Latter down',
         DESCRIPTION: 'Latter that goes down',
-        SEARCH: """Crew Quarters are to the left and the living area
-        to the right""",
+        SEARCH: """Crew Quarters are to the left and the living area to the right""",
         UP: '',
         DOWN: 'a1',
         LEFT: 'b1',
@@ -125,10 +120,10 @@ zonemap = {
     },
     'c3': {
         ZONENAME: 'Locked room',
-        DESCRIPTION: """You use the key card! There is nothing in the room,
-        it's just a room leading to the cockpit.""",
-        SEARCH: """The latter going down is on the left and the
-        cockpit is to the right.""",
+        DESCRIPTION: """
+        You use the key card! There is nothing in the room, it's just a room leading to the cockpit.
+        """,
+        SEARCH: """The latter going down is on the left and the cockpit is to the right.""",
         UP: '',
         DOWN: '',
         LEFT: 'c2',
@@ -136,8 +131,10 @@ zonemap = {
     },
     'c4': {
         ZONENAME: 'Cockpit',
-        DESCRIPTION: """The captain,
-        everything else is normal""",
+        DESCRIPTION: """
+        The pirate captain is here!
+        You are at a stand off, shoot first!
+        """,
         SEARCH: """the only way is to the left back to the locked room""",
         UP: '',
         DOWN: '',
