@@ -9,7 +9,6 @@ import title as ti
 from classes import myPlayer
 from game_map import zonemap
 from game_map import print_map
-global status
 global dest
 global ask
 
