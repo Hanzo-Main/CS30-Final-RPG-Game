@@ -75,8 +75,6 @@ def move(ans):
         move(ans)
 
 
-
-
 def player_examine(ans):
     if myPlayer.location == 'a1':
         ask = "\nWould you like to go up?\n"
@@ -109,15 +107,15 @@ def player_examine(ans):
     else:
         print(zonemap[myPlayer.location][SEARCH] + '\n')
 
-def player_attack(ans):
-  if myPlayer.location == 'b3':
-    print("You shoot the pirate before he saw you!")
 
-    continuous(ans)
-  elif myPlayer.location == 'c4':
-    print("You shot first!")
-    print('\n You beat the game!')
-    quit()
+def player_attack(ans):
+    if myPlayer.location == 'b3':
+        print("You shoot the pirate before he saw you!")
+        continuous(ans)
+    elif myPlayer.location == 'c4':
+        print("You shot first!")
+        print('\n You beat the game!')
+        quit()
 
 
 def main_game_loop():
