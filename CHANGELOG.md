@@ -21,6 +21,7 @@ v1.2
     
 v1.3
 
+- Friend Morgan test ran, ran into latter problems
 - Got rid of double header
 - fixed code so that ladders are fully functional
 - started on attack function
@@ -28,6 +29,8 @@ v1.3
     
 v1.4
 
+- Father test ran, ran into attack function problems
+- made attack function more specific since it was bugged
 - Coded a ok attack function
 - made it so the game has an ending
 - made the game quit once the game is won
@@ -43,5 +46,11 @@ v1.6
     
 v1.7
 - got rid of unused code
-- got sibling to test run
-- bug fixes
+- got sibling to test run, ran into bugs mosly on print layout since it looked bad.
+
+v1.8
+
+- added descriptions to functions
+- got ride of more useless code
+- corrected code in map file
+- newline at the end of classes file
